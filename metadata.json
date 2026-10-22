@@ -1,0 +1,6 @@
+{
+  "name": "Anime Intelligence AI",
+  "description": "Specialized AI engine and knowledge retrieval system for anime, manga, characters, scenes, streaming availability, and multilingual Arabic/English/Japanese Q&A.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
