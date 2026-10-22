@@ -1,4 +1,30 @@
-
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/index.ts": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    { "source": "/health", "destination": "/api" },
+    { "source": "/api/openapi.json", "destination": "/api" },
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/anime", "destination": "/api" },
+    { "source": "/anime/(.*)", "destination": "/api" },
+    { "source": "/chat", "destination": "/api" },
+    { "source": "/recommendations", "destination": "/api" },
+    { "source": "/availability", "destination": "/api" },
+    { "source": "/scenes", "destination": "/api" },
+    { "source": "/scenes/(.*)", "destination": "/api" },
+    { "source": "/images", "destination": "/api" },
+    { "source": "/images/(.*)", "destination": "/api" },
+    { "source": "/sources/(.*)", "destination": "/api" },
+    { "source": "/sync/(.*)", "destination": "/api" },
+    { "source": "/((?!api|anime|scenes|images|sources|sync|health|chat|recommendations|availability).*)", "destination": "/index.html" }
+  ]
 }
